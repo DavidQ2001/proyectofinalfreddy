@@ -1,5 +1,6 @@
 package com.example.empresapersonalsoft;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -42,19 +43,29 @@ import org.json.JSONObject;
         jetclave = vista.findViewById(R.id.etclave);
         jbtingresar = vista.findViewById(R.id.btingresar);
         jtvregistrar=vista.findViewById(R.id.tvregistrar);
-        jtvregistrar.setOnClickListener(new View.OnClickListener() {
+        jbtingresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Iniciar_sesion();
             }
         });
-
+        jtvregistrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Registrar();
+            }
+        });
         return vista;
 
     }
 
     private void Iniciar_sesion(){
-        
+    }
+
+    private void Registrar(){
+        Intent intregistar = new Intent(getContext(),RegistrarseActivity.class);
+        startActivity(intregistar);
+
     }
 
         @Override
